@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Global rules",
+    "description": "Keeps a user-owned rule list in every request's system prompt and requires the agent to check each rule before answering. Edited in Settings → Global rules, by the global_rules tool, or with /rules."
+  }
+}

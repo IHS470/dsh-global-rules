@@ -1,0 +1,12 @@
+# dsh-global-rules — bundle patch.
+#
+# One Host entry mounts both halves of this package: the Host half from `main`
+# (rules store, prompt section, tool, /rules command, HTTP route) and the
+# browser half from the `./client` export (Settings → 全局规则).
+#
+# Inserted here rather than by hand-editing the profile patch, so installing and
+# removing the package stays a single step.
+
+- insert:
+    - id: global-rules
+      name: dsh-global-rules

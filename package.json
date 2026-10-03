@@ -1,0 +1,57 @@
+{
+  "name": "dsh-global-rules",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Global rules the agent must review before every answer: injected into the system prompt, edited in Settings → 全局规则, by the global_rules tool, or with /rules.",
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "rules",
+    "instructions",
+    "system-prompt"
+  ],
+  "license": "MIT",
+  "author": "IHS470",
+  "homepage": "https://github.com/IHS470/dsh-global-rules#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IHS470/dsh-global-rules.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IHS470/dsh-global-rules/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/host-smoke.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
